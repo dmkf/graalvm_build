@@ -16,5 +16,6 @@ ENV PATH=${JAVA_HOME}/bin:${PATH}
 # COPY ./pom.xml ./pom.xml
 VOLUME /var/app
 COPY build.sh /var/build.sh
+RUN chmod +x /var/build.sh
 ENV MAVEN_OPTS='-Xmx2g'
 ENTRYPOINT [ "/var/build.sh" ]
