@@ -14,8 +14,7 @@ ENV PATH=${M2_HOME}/bin:${PATH}
 ENV PATH=${JAVA_HOME}/bin:${PATH}
 
 # COPY ./pom.xml ./pom.xml
-# COPY src ./src/
 RUN mkdir -f /app
-
+COPY build.sh ./
 ENV MAVEN_OPTS='-Xmx2g'
-RUN cd /app && mvn -Dmaven.test.skip=true -Pnative clean package
+ENTRYPOINT [ "/deployments/run-java.sh" ]
