@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /app
+cd /var/app
 mvn -Dmaven.test.skip=true -Pnative clean package
