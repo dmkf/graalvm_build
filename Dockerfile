@@ -17,6 +17,6 @@ ENV PATH=${JAVA_HOME}/bin:${PATH}
 VOLUME /var/app
 COPY build.sh /var/build.sh
 RUN chmod +x /var/build.sh
-ENV MAVEN_OPTS='-Xmx2g'
+ENV MAVEN_OPTS='-Xmx6g'
 RUN gu install native-image
 ENTRYPOINT [ "/var/build.sh" ]
